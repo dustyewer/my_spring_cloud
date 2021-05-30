@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yewer.securitytest.dao.UserDao">
+
+    <resultMap type="yewer.securitytest.entity.User" id="UserMap">
+        <result property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="" type=""
+
+    <select id="getUserRole" resultMap="">
+        SELECT user_role.id from user,user_role
+        where user.name= #{name}
+        and user_role.user=user.id
+    </select>
+
+
+</mapper>
+

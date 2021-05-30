@@ -1,0 +1,6 @@
+
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(¹ƒ•á8á¶Û©˜/
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ã¿¢Ôùÿÿÿÿ8á¶Û©˜/
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(úŸ°½8á¶Û©˜/
+dsquid:UselessImportCheck";Remove this unused import 'yewer.securitytest.dao.RoleDao'.(×Ãì8á¶Û©˜/

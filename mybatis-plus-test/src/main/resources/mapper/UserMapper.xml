@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="yewer.mybatisplustest.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="yewer.mybatisplustest.domain.User">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+    </resultMap>
+
+
+    <resultMap id="UserPermissionMap" type="yewer.mybatisplustest.domain.UserPermission">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+        <!--一对一用的是Javatype  一对多用的是ofType-->
+        <!--不是说实体类里面有什么你就要写上面而是你写什么我们就查什么-->
+        <collection property="permissions" ofType="yewer.mybatisplustest.domain.Permission">
+            <result column="permission" property="permission"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="UserPermissionMap2" type="yewer.mybatisplustest.domain.UserPermission2">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+
+        <collection property="permissions" ofType="String" javaType="ArrayList">
+<!--        <collection property="permissions" ofType="String">-->
+            <result column="permission" property="permission"/>
+        </collection>
+    </resultMap>
+
+    <resultMap id="UserPermissionMap3" type="yewer.mybatisplustest.domain.UserPermission3">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="password" column="password" jdbcType="VARCHAR"/>
+
+<!--        <collection property="permissions" ofType="String" javaType="java.util.HashSet">-->
+        <collection property="permissions" ofType="String" >
+            <result column="permission" property="permission"/>
+        </collection>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,password
+    </sql>
+
+    <!--    1对多的 组合查询方式-->
+    <select id="selectUserPermission" resultMap="UserPermissionMap">
+        select u.id,u.name,u.password,p.permission
+            from user u,role r,permission p,user_role ur,role_permission rp
+            where u.id=ur.user and r.id=ur.role and p.id=rp.permission and r.id=rp.role and u.name=#{name}
+    </select>
+
+    <select id="selectUserPermission2" resultMap="UserPermissionMap2">
+        select u.id,u.name,u.password,p.permission
+        from user u,role r,permission p,user_role ur,role_permission rp
+        where u.id=ur.user and r.id=ur.role and p.id=rp.permission and r.id=rp.role and u.name=#{name}
+    </select>
+
+    <select id="selectUserPermission3" resultMap="UserPermissionMap3">
+        select u.id,u.name,u.password,p.permission
+        from user u,role r,permission p,user_role ur,role_permission rp
+        where u.id=ur.user and r.id=ur.role and p.id=rp.permission and r.id=rp.role and u.name=#{name}
+    </select>
+
+
+
+
+
+
+
+    <select id="selectUser" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from user limit 1;
+    </select>
+</mapper>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="exception-handler-test" />
+        <module name="load-balance-test" />
+        <module name="jpa-test" />
+        <module name="security-test" />
+        <module name="feign-test" />
+        <module name="execption-handler-test" />
+        <module name="eureka-server" />
+        <module name="mybatis-plus-test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="eureka-server" target="1.8" />
+      <module name="exception-handler-test" target="1.8" />
+      <module name="execption-handler-test" target="1.8" />
+      <module name="expection-handler-test" target="1.8" />
+      <module name="feign-test" target="1.8" />
+      <module name="jpa-test" target="1.8" />
+      <module name="load-balance-test" target="1.8" />
+      <module name="mybatis-plus-test" target="1.8" />
+      <module name="ribbon-test" target="1.8" />
+      <module name="security-test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="eureka-server" options="-parameters" />
+      <module name="jpa-test" options="-parameters" />
+      <module name="ribbon-test" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,5 @@
+
+Xsquid:S1191"5Use classes from the Java API instead of Sun classes.(—ÆÆıÿÿÿÿ8¾ÜÄÍ™/
+osquid:UselessImportCheck"?Remove this unused import 'sun.print.BackgroundLookupListener'.(—ÆÆıÿÿÿÿ8¾ÜÄÍ™/
+ksquid:UselessImportCheck"@Remove this unused import 'org.apache.ibatis.annotations.Param'.(á¬Ó²8¾ÜÄÍ™/
+[squid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¾ÜÄÍ™/
